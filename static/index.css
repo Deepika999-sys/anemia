@@ -1,0 +1,108 @@
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  background: linear-gradient(135deg, #f8fafc 0%, #e6f0ff 100%);
+  color: #0f172a;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  padding: 2rem;
+}
+
+h1, h2 {
+  margin: 0 0 0.5rem 0;
+  text-align: center;
+  font-weight: 700;
+}
+
+h1 {
+  font-size: 1.8rem;
+  color: #0b1220;
+}
+
+h2 {
+  font-size: 1.05rem;
+  color: #334155;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+form {
+  width: 100%;
+  max-width: 420px;
+  background: #ffffff;
+  padding: 1.5rem 1.75rem;
+  border-radius: 12px;
+  box-shadow: 0 8px 30px rgba(2,6,23,0.08);
+  border: 1px solid rgba(15,23,42,0.04);
+}
+
+.form-center {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+label {
+  display: block;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #0f172a;
+}
+
+input[type="text"],
+input[type="password"] {
+  width: 100%;
+  padding: 0.65rem 0.75rem;
+  border: 1px solid #e6eaf0;
+  border-radius: 8px;
+  font-size: 1rem;
+  color: #0b1220;
+  background: #fff;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(37,99,235,0.06);
+  border-color: #2563eb;
+}
+
+input[type="submit"] {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border-radius: 10px;
+  border: 0;
+  background: #2563eb;
+  color: #fff;
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 150ms ease, transform 100ms ease;
+}
+
+input[type="submit"]:hover {
+  background: #1e40af;
+}
+
+input[type="submit"]:active {
+  transform: translateY(1px);
+}
+
+.result { max-width: 420px; background:#fff; padding:1rem; border-radius:8px; }
+
+@media (max-width: 480px) {
+  body { padding: 1rem; }
+  h1 { font-size: 1.4rem; }
+  form { padding: 1rem; border-radius: 10px; }
+}

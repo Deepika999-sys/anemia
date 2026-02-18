@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Anemia - Login</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='index.css') }}">
+  </head>
+  <body>
+    <h1>Anemia Detection System</h1>
+    <h2>Login</h2>
+
+    {% if error %}
+      <p style="color:crimson; text-align:center">Invalid username or password</p>
+    {% endif %}
+
+    <form id="loginForm" action="{{ url_for('login') }}" method="post">
+      <div class="form-center">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+
+        <input type="submit" value="Login">
+      </div>
+    </form>
+  </body>
+</html>

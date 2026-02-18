@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Predict</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='index.css') }}">
+  </head>
+  <body>
+    <h1>Anemia Detection System</h1>
+    <h2>Prediction</h2>
+
+    <form action="{{ url_for('predict') }}" method="post">
+      <div class="form-center">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="gender">Gender:</label>
+        <select id="gender" name="gender" required>
+          <option value="1">Male</option>
+          <option value="0">Female</option>
+        </select>
+
+        <label for="hemoglobin">Hemoglobin (g/dL):</label>
+        <input type="text" id="hemoglobin" name="hemoglobin" required>
+
+        <label for="mcv">MCV (fL):</label>
+        <input type="text" id="mcv" name="mcv" required>
+
+        <label for="mch">MCH (pg):</label>
+        <input type="text" id="mch" name="mch" required>
+
+        <label for="mchc">MCHC (g/dL):</label>
+        <input type="text" id="mchc" name="mchc" required>
+
+        <input type="submit" value="Predict">
+      </div>
+    </form>
+
+    {% if result %}
+      <div class="result">
+        <h3>Result: {{ result.anemia }}</h3>
+        <p><strong>Name:</strong> {{ result.name }}</p>
+        <p><strong>Gender:</strong> {{ result.gender }}</p>
+        <p><strong>Hemoglobin:</strong> {{ result.hemoglobin }} g/dL</p>
+        <p><strong>MCV:</strong> {{ result.mcv }} fL</p>
+        <p><strong>MCH:</strong> {{ result.mch }} pg</p>
+        <p><strong>MCHC:</strong> {{ result.mchc }} g/dL</p>
+      </div>
+    {% endif %}
+
+    <p><a href="{{ url_for('logout') }}">Logout</a></p>
+  </body>
+</html>
